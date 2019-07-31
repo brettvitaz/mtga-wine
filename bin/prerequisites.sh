@@ -2,6 +2,7 @@
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.." || exit 1
 TMP_DIR="${PROJECT_DIR}/tmp"
 
+mkdir -p "${TMP_DIR}"
 cd "${TMP_DIR}"
 
 # Install Homebrew
