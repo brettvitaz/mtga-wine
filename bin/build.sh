@@ -8,8 +8,8 @@ SKEL_DIR="${PROJECT_DIR}/wrapper_skel"
 WINE_DIR="/Applications/Wine Stable.app/Contents/Resources/wine/bin"
 export PATH="${WINE_DIR}:$PATH"
 
-WINEARCH=win32 
-WINEPREFIX="${TMP_DIR}/bottle"
+export WINEARCH=win32 
+export WINEPREFIX="${TMP_DIR}/bottle"
 
 mkdir -p "${TMP_DIR}"
 cd "${TMP_DIR}"
