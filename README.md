@@ -14,7 +14,9 @@ Run MTG Arena on your Mac!
 
 ## Quick Start
 
-### Installing dependencies
+### Installing dependencies and prerequisites
+
+Check to see if you have XCode Command Line Tools installed by running `xcode-select -p` in the terminal. If it is installed, you'll be presented with the tools path. If it is not installed, run `xcode-select --install` in the terminal.
 
 A script has been supplied to install Homebrew, xquartz, cabextract, zenity, winetricks, and wine in one shot. This script is very naive and may not be ideal in all circumstances. If you have any concerns, please open the script and execute the commands manually.
 
