@@ -1,3 +1,9 @@
+# Notes
+
+## General
+
+A new installer has been provided by Wizards that works well on Wine. Get the current version as of this writing: https://mtgarena.downloads.wizards.com/Live/Windows32/versions/1595.718832/MTGAInstaller_0.1.1595.718832.msi
+
 ## Install Homebrew
 
 _Find information here: [Homebrew](https://brew.sh)_
