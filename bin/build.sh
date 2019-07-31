@@ -21,5 +21,3 @@ winetricks xact &> /dev/null
 
 echo "Installing MTGA"
 wine msiexec /i MTGAInstaller_0.1.1595.718832.msi /qn &> /dev/null
-
-"${BIN_DIR}/create-wrapper.sh"

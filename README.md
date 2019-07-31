@@ -33,7 +33,7 @@ bin/make-wrapper.sh
 
 ### Enjoy
 
-If all has gone well, an executable Mac application will be deposited in 'out/MTGA.app'. You may move this file to your Applications directory and run it as you would any other application.
+If all has gone well, an executable Mac application will be deposited in 'out/MTGA.app'. You may move this to your Applications directory and run it as you would any other application. You may also remove the 'tmp' directory to free up space.
 
 ## Troubleshooting
 
