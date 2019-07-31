@@ -44,11 +44,11 @@ sudo winetricks --self-update
 
 ## Create wine bottle
 
-It is important to understand that wine creates a directory on your computer that contains the virtual "Windows C: drive" (known as a wine prefix). You can have multiple wine prefixes on your computer and you can (should) install different applications in different prefixes. Winetricks is somewhat of a package installer and config tool for wine prefixes.
+It is important to understand that wine creates a directory on your computer that contains the virtual "Windows C: drive" (known as a wine bottle). You can have multiple wine bottles on your computer and you can (should) install different applications in different bottles. Winetricks is somewhat of a package installer and config tool for wine.
 
 This part is kind of specific to you and your configuration, but here is what I have done.
 
-Create a directory to store your wine prefixes:
+Create a directory to store your wine bottle:
 
 ```
 cd ${HOME}
@@ -56,14 +56,14 @@ mkdir .bottles
 cd .bottles
 ```
 
-Create a wine prefix environment file that will store the location of your new prefix. I named the file `~/.bottles/mtg-arena.bottle` and put in the following:
+Create a wine bottle environment file that will store the path, known as a wine prefix. I named the file `~/.bottles/mtg-arena.bottle` and put in the following:
 
 ```
 export WINEARCH=win32 
 export WINEPREFIX="${HOME}/.bottles/mtg-arena"
 ```
 
-Activate the new wine prefix, initialize the bottle, install .NET 4.6.2, xact (directx), and Arena:
+Activate the new wine bottle, install .NET 4.6.2, xact (directx), and Arena:
 
 ```
 source mtg-arena.bottle
