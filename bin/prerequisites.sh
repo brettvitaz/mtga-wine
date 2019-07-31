@@ -16,5 +16,9 @@ brew update
 brew install cabextract zenity winetricks
 brew cask install xquartz
 
+# Update winetricks
+sudo winetricks --self-update
+
 # Install Wine
 wget -c https://dl.winehq.org/wine-builds/macosx/pool/winehq-stable-3.0.5.pkg
+sudo installer -pkg winehq-stable-3.0.5.pkg -target /
