@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+RESOURCES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../Resources"
+WINE_DIR="/Applications/Wine Stable.app/Contents/Resources/wine/bin"
+PATH="${WINE_DIR}:$PATH"
+
+export WINEARCH=win32 
+export WINEPREFIX="${RESOURCES_DIR}/bottle"
+
+wine ${WINEPREFIX}/drive_c/Program\ Files/Wizards\ of\ the\ Coast/MTGA/MTGA.exe

@@ -1,0 +1,2 @@
+export WINEARCH=win32 
+export WINEPREFIX="${PWD}/bottle"
