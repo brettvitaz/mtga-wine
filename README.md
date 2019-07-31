@@ -5,6 +5,7 @@ Run MTG Arena on your Mac!
 ## Requirements
 
 - Wine Stable 3.0.5
+- XCode Command Line Tools
 - Homebrew
 - xquartz
 - cabextract
@@ -42,6 +43,6 @@ The scripts are all fairly simple and do not provide much in the way of fault to
 
 If you would like to help make this project better, please feel free to make a pull request. 
 
-## Credits
+## Acknowledgments
 
 Inspiration for the wrapper came from this project: https://github.com/p-sam/hori-mini-wired-gamepad-remote-play
