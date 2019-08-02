@@ -15,6 +15,7 @@ The build and update scripts fetch the current MTGA application version prior to
 - cabextract
 - zenity
 - winetricks
+- wget
 
 ## Quick Start
 
