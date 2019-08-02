@@ -45,6 +45,11 @@ The scripts are all fairly simple and do not provide much in the way of fault to
 
 If you would like to help make this project better, please feel free to make a pull request. 
 
+## TODO
+
+- Pull updated version automatically
+- Update path from application bundle wrapper
+
 ## Acknowledgments
 
 Inspiration for the wrapper came from this project: https://github.com/p-sam/hori-mini-wired-gamepad-remote-play
