@@ -14,9 +14,11 @@ export WINEPREFIX="${TMP_DIR}/bottle"
 mkdir -p "${TMP_DIR}"
 cd "${TMP_DIR}"
 
-MTGA_VERSION="1615.720204"
+wget -c https://mtgarena.downloads.wizards.com/Live/Windows32/updates.txt
+MTGA_VERSION="$(sed -nE 's/^ProductVersion\ =\ (.*)/\1/p' updates.txt | tr -d '\t\r\n')"
+MTGA_VERSION_PATH="$(sed -nE 's/[0-9]+\.[0-9]+\.(.*)/\1/p' <<< ${MTGA_VERSION})"
 
-wget -c https://mtgarena.downloads.wizards.com/Live/Windows32/versions/${MTGA_VERSION}/MTGAInstaller_0.1.${MTGA_VERSION}.msi
+wget -c https://mtgarena.downloads.wizards.com/Live/Windows32/versions/${MTGA_VERSION_PATH}/MTGAInstaller_${MTGA_VERSION}.msi
 
 echo "Installing Dot Net 4.6.2"
 winetricks -q dotnet462 &> /dev/null
@@ -25,4 +27,6 @@ echo "Installing xact"
 winetricks xact &> /dev/null
 
 echo "Installing MTGA"
-wine msiexec /i MTGAInstaller_0.1.${MTGA_VERSION}.msi /qn &> /dev/null
+wine msiexec /i MTGAInstaller_${MTGA_VERSION}.msi /qn
+
+wineboot
