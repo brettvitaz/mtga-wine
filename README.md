@@ -2,6 +2,10 @@
 
 Run MTG Arena on your Mac!
 
+## Notes
+
+The build and update scripts fetch the current MTGA application version prior to downloading and installing, ensuring the application is up to date.
+
 ## Requirements
 
 - Wine Stable 3.0.5
@@ -36,6 +40,10 @@ bin/make-wrapper.sh
 ### Enjoy
 
 If all has gone well, an executable Mac application will be deposited in 'out/MTGA.app'. You may move this to your Applications directory and run it as you would any other application. You may also remove the 'tmp' directory to free up space.
+
+## Updating
+
+Locate the MTGA application created in the previous step (probably /Applications), right click on the app icon and select "Show Package Contents". Open the "bin" directory and double click on "Update.command". This will launch an update script in a terminal window that downloads and installs the latest version. Once complete, close the terminal window and run the MTGA application as normal.
 
 ## Troubleshooting
 
