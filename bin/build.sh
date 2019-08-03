@@ -28,5 +28,3 @@ winetricks xact &> /dev/null
 
 echo "Installing MTGA"
 wine msiexec /i MTGAInstaller_${MTGA_VERSION}.msi /qn &> /dev/null
-
-wineboot
