@@ -6,7 +6,3 @@ WINE_DIR="${RESOURCES_DIR}/usr/bin"
 export WINEARCH=win32
 export WINEPREFIX="${RESOURCES_DIR}/bottle"
 export PATH="${WINE_DIR}:$PATH"
-
-wine "${WINEPREFIX}/drive_c/Program Files/Wizards of the Coast/MTGA/MTGA.exe"
-
-wineboot -s

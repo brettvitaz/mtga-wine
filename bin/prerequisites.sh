@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.." || exit 1
-TMP_DIR="${PROJECT_DIR}/tmp"
-
-mkdir -p "${TMP_DIR}"
-cd "${TMP_DIR}"
 
 # Install Homebrew
 if ! hash brew 2>/dev/null; then
@@ -22,7 +18,3 @@ sudo winetricks --self-update
 
 # Install wget, some people might not have it
 brew install wget
-
-# Install Wine
-wget -c https://dl.winehq.org/wine-builds/macosx/pool/winehq-stable-3.0.5.pkg
-sudo installer -pkg winehq-stable-3.0.5.pkg -target /
