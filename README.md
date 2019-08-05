@@ -19,6 +19,8 @@ The build and update scripts fetch the current MTGA application version prior to
 
 ## Quick Start
 
+For the fastest start, after confirming that XCode Command Line Tools is installed, you can run `Install.command` right from Finder. This will install prerequisites and create the application bundle all in one step.
+
 ### Installing dependencies and prerequisites
 
 Check to see if you have XCode Command Line Tools installed by running `xcode-select -p` in the terminal. If it is installed, you'll be presented with the tools path. If it is not installed, run `xcode-select --install` in the terminal.
@@ -35,12 +37,11 @@ Run the build script to create the Wine bottle, install the remaining dependenci
 
 ```bash
 bin/build.sh
-bin/make-wrapper.sh
 ```
 
 ### Enjoy
 
-If all has gone well, an executable Mac application will be deposited in 'out/MTGA.app'. You may move this to your Applications directory and run it as you would any other application. You may also remove the 'tmp' directory to free up space.
+If all has gone well, Finder will open to reveal the newly created application bundle of 'out/MTGA.app'. You may move this to your Applications directory and run it as you would any other application.
 
 ## Updating
 
