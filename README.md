@@ -60,6 +60,7 @@ If you would like to help make this project better, please feel free to make a p
 
 - ✅ Pull updated version automatically
 - ✅ Update path from application bundle wrapper
+- Investigate fix for frequent crashing
 
 ## Acknowledgments
 
