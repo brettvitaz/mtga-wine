@@ -16,6 +16,7 @@ The build and update scripts fetch the current MTGA application version prior to
 - zenity
 - winetricks
 - wget
+- jq
 
 ## Quick Start
 

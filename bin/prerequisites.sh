@@ -6,15 +6,12 @@ if ! hash brew 2>/dev/null; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Update Homebrew
+echo "Update Homebrew"
 brew update
 
-# Install Wine deps
-brew install cabextract zenity winetricks
+echo "Install Wine deps"
+brew install cabextract jq wget winetricks zenity
 brew cask install xquartz
 
-# Update winetricks
+echo "Update winetricks"
 sudo winetricks --self-update
-
-# Install wget, some people might not have it
-brew install wget

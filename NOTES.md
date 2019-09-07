@@ -2,7 +2,7 @@
 
 ## General
 
-A new installer has been provided by Wizards that works well on Wine. Get the current version as of this writing: https://mtgarena.downloads.wizards.com/Live/Windows32/versions/1595.718832/MTGAInstaller_0.1.1595.718832.msi
+A new installer has been provided by Wizards that works well on Wine. Get the current version as of this writing: https://mtgarena.downloads.wizards.com/Live/Windows32/versions/1678.727490/MTGAInstaller_0.1.1678.727490.msi
 
 ## Install Homebrew
 
@@ -63,14 +63,15 @@ export WINEARCH=win32
 export WINEPREFIX="${HOME}/.bottles/mtg-arena"
 ```
 
-Activate the new wine bottle, install .NET 4.6.2, xact (directx), and Arena:
+Activate the new wine bottle, install xact (directx), and Arena:
 
 ```
 source mtg-arena.bottle
-winetricks -q dotnet462
 winetricks xact
 wine <PATH_TO_ARENA_INTSALLER>
 ```
+
+*nb. I have noticed that .net is not acutally necessary to run the game.*
 
 ## Run the game
 
