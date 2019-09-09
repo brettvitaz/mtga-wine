@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# TODO - Make this a wrapper that downloads an updated script
+
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.." || exit 1
 RESOURCES_DIR="${PROJECT_DIR}/Resources"
 
@@ -9,12 +12,15 @@ export PATH="${WINE_DIR}:$PATH"
 
 cd "${RESOURCES_DIR}"
 
+# TODO - use the patch installer instead of reinstalling
+
 echo "Reinstalling MTG Arena"
-MTGA_VERSION="$(wget -qO- https://mtgarena.downloads.wizards.com/Live/Windows32/version | jq -r '.Versions | keys | .[0]')"
-MTGA_VERSION_PATH="$(sed -nE 's/[0-9]+\.[0-9]+\.(.*)/\1/p' <<< ${MTGA_VERSION})"
-wget -c https://mtgarena.downloads.wizards.com/Live/Windows32/versions/${MTGA_VERSION_PATH}/MTGAInstaller_${MTGA_VERSION}.msi
-wine msiexec /x MTGAInstaller_${MTGA_VERSION}.msi /qn &> /dev/null
-wine msiexec /i MTGAInstaller_${MTGA_VERSION}.msi /qn &> /dev/null
+MTGA_INSTALLER_URL="$(wget -qO- https://mtgarena.downloads.wizards.com/Live/Windows32/version | jq -r '.CurrentInstallerURL')"
+MTGA_INSTALLER="$(sed -nE 's/.+\/(.+)/\1/p' <<< ${MTGA_INSTALLER_URL})"
+wget -c ${MTGA_INSTALLER_URL}
+echo "msiexec /i ${MTGA_INSTALLER} /qn &> /dev/null"
+wine msiexec /x ${MTGA_INSTALLER} /qn &> /dev/null
+wine msiexec /i ${MTGA_INSTALLER} /qn &> /dev/null
 
 echo "Finished. Please close this window."
 

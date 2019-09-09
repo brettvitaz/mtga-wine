@@ -29,6 +29,8 @@ WINE_PACKAGE=portable-winehq-staging-3.21-osx.tar.gz
 wget -c https://dl.winehq.org/wine-builds/macosx/pool/${WINE_PACKAGE}
 tar -xzf ${WINE_PACKAGE}
 
+# TODO - determine if official .net makes the game run better.
+
 # echo "Installing Dot Net 4.6.2"
 # winetricks -q dotnet462 &> /dev/null
 
@@ -36,11 +38,10 @@ echo "Installing xact"
 winetricks xact &> /dev/null
 
 echo "Installing MTG Arena"
-MTGA_VERSION="$(wget -qO- https://mtgarena.downloads.wizards.com/Live/Windows32/version | jq -r '.Versions | keys | .[0]')"
-MTGA_VERSION_PATH="$(sed -nE 's/[0-9]+\.[0-9]+\.(.*)/\1/p' <<< ${MTGA_VERSION})"
-wget -c https://mtgarena.downloads.wizards.com/Live/Windows32/versions/${MTGA_VERSION_PATH}/MTGAInstaller_${MTGA_VERSION}.msi
-echo "wine msiexec /i MTGAInstaller_${MTGA_VERSION}.msi /qn &> /dev/null"
-wine msiexec /i MTGAInstaller_${MTGA_VERSION}.msi /qn &> /dev/null
+MTGA_INSTALLER_URL="$(wget -qO- https://mtgarena.downloads.wizards.com/Live/Windows32/version | jq -r '.CurrentInstallerURL')"
+MTGA_INSTALLER="$(sed -nE 's/.+\/(.+)/\1/p' <<< ${MTGA_INSTALLER_URL})"
+wget -c ${MTGA_INSTALLER_URL}
+wine msiexec /i ${MTGA_INSTALLER} /qn &> /dev/null
 
 echo "MTG Arena installation complete"
 open ${OUT_DIR}
